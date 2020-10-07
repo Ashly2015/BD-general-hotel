@@ -465,6 +465,13 @@ foreign key(id_sucursal) references
 sucursal(id_sucursal)
 )engine=Innodb default charset=latin1;
 
+#inserts BODEGA
+insert into bodega VALUES(0,1,"Bodega 1","zona 5","D");
+insert into bodega VALUES(0,1,"Bodega 2","zona 5","D");
+insert into bodega VALUES(0,2,"Bodega 3","zona 6","D");
+insert into bodega VALUES(0,3,"Bodega 4","zona 1","D");
+insert into bodega VALUES(0,4,"Bodega 5","zona 2","D");
+
 create table tipo_inventario (
 id_tipo_inventario int auto_increment primary key,
 nombre varchar(20) not null,
@@ -520,6 +527,13 @@ id_proveedor int auto_increment primary key,
 nombre varchar(128) not null,
 direccion varchar(128) not null
 )engine=Innodb default charset=latin1;
+
+#inserts PROVEEDOR
+insert into proveedor VALUES(0,"proveedor 1","zona 2");
+insert into proveedor VALUES(0,"proveedor 2","zona 7");
+insert into proveedor VALUES(0,"proveedor 3","zona 3");
+insert into proveedor VALUES(0,"proveedor 4","zona 15");
+insert into proveedor VALUES(0,"proveedor 5","zona 10");
 
 create table caja(
 id_caja int auto_increment primary key,
@@ -661,11 +675,19 @@ moneda(id_moneda),
 primary key(id_credito_cliente,id_cliente,id_sucursal)
 )engine=Innodb default charset=latin1;
 
+
 create table impuestos(
-id_impuesto int primary key not null,
+id_impuesto int primary key auto_increment not null,
 nombre_impuesto varchar(50) not null,
 estatus_impuesto varchar(1) not null
 )engine=innodb;
+
+#inserts IMPUESTO
+insert into impuesto VALUES(0,"impuesto 1","A");
+insert into impuesto VALUES(0,"impuesto 2","A");
+insert into impuesto VALUES(0,"impuesto 3","A");
+insert into impuesto VALUES(0,"impuesto 4","A");
+insert into impuesto VALUES(0,"impuesto 5","A");
 
 create table vendedor(
 id_vendedor int primary key auto_increment,
